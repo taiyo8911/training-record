@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>筋トレ記録アプリ</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+
+            <header>
+                <h1>筋トレ記録アプリ</h1>
+                <div><button onclick="deleteData()">全データ消去</button></div>
+            </header>
+
+            <div class="group">
+                <h2>記録</h2>
+                <form id="log">
+                    <div>
+                        <label for="exercise-input">種目：</label>
+                        <!-- <input type="text" id="exercise-input"> -->
+                        <select name="" id="exercise-input">
+                            <option value="レッグプレス">レッグプレス</option>
+                            <option value="ラットプルダウン">ラットプルダウン</option>
+                            <option value="チェストプレス">チェストプレス</option>
+                            <option value="クランチ">クランチ</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="weight-input">重量：</label>
+                        <input type="number" id="weight-input">
+                    </div>
+                    <div>
+                        <label for="reps-input">回数：</label>
+                        <input type="number" id="reps-input">
+                    </div>
+                    <div>
+                        <button type="button" onclick="saveRecord()">保存</button>
+                        <button type="button" onclick="clearForm()">消去</button>
+                    </div>
+                </form>
+            </div>
+
+
+            <div id="records" class="group">
+                <h2>履歴</h2>
+                <span id="message"></span>
+                <table border="1" id="recordsTable">
+                    <thead>
+                        <tr>
+                            <th>日付</th>
+                            <th>種目</th>
+                            <th>重量</th>
+                            <th>回数</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recordsTableBody">
+                    </tbody>
+                </table>
+            </div>
+
+
+            <div class="group">
+                <h2>グラフ</h2>
+                <span id="message2"></span>
+                <canvas id="myChart"></canvas>
+            </div>
+        </div>
+
+        <!-- <script src="main.js"></script> -->
+        <script src="script.js"></script>
+
+    </body>
+
+</html>
