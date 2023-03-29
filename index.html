@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0">
         <title>筋トレ記録アプリ</title>
         <link rel="stylesheet" href="style.css">
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -15,7 +15,10 @@
 
             <header>
                 <h1>筋トレ記録アプリ</h1>
-                <div><button onclick="deleteData()">全データ消去</button></div>
+                <div class="buttons">
+                    <div><button onclick="reload()">更新</button></div>
+                    <div><button onclick="deleteData()">全データ消去</button></div>
+                </div>
             </header>
 
             <div class="group">
@@ -23,7 +26,6 @@
                 <form id="log">
                     <div>
                         <label for="exercise-input">種目：</label>
-                        <!-- <input type="text" id="exercise-input"> -->
                         <select name="" id="exercise-input">
                             <option value="レッグプレス">レッグプレス</option>
                             <option value="ラットプルダウン">ラットプルダウン</option>
@@ -39,9 +41,9 @@
                         <label for="reps-input">回数：</label>
                         <input type="number" id="reps-input">
                     </div>
-                    <div>
-                        <button type="button" onclick="saveRecord()">保存</button>
-                        <button type="button" onclick="clearForm()">消去</button>
+                    <div class="buttons">
+                        <div><button type="button" onclick="saveRecord()">保存</button></div>
+                        <div><button type="button" onclick="clearForm()">消去</button></div>
                     </div>
                 </form>
             </div>
