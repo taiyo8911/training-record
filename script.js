@@ -1,3 +1,8 @@
+// 更新ボタンが押された場合の処理
+function reload() {
+    window.location.reload();
+}
+
 // 全データ消去ボタンが押された場合の処理
 function deleteData() {
     const isConfirm = window.confirm("全てのデータを消去してよろしいですか？");

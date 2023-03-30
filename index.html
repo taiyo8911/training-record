@@ -12,69 +12,83 @@
 
     <body>
         <div class="container">
-
             <header>
                 <h1>筋トレ記録アプリ</h1>
-                <div class="buttons">
+                <div class="flex">
                     <div><button onclick="reload()">更新</button></div>
                     <div><button onclick="deleteData()">全データ消去</button></div>
                 </div>
+
+                <div class="tab-container">
+                    <div class="tab-header">
+                        <!-- タブのリスト -->
+                        <ul class="tab-list">
+                            <li class="tab-item active" data-tab="tab1" onclick="openTab(event, 'tab1')">記録</li>
+                            <li class="tab-item" data-tab="tab2" onclick="openTab(event, 'records')">履歴</li>
+                            <li class="tab-item" data-tab="tab3" onclick="openTab(event, 'tab3')">グラフ</li>
+                        </ul>
+                    </div>
+                </div>
+
             </header>
 
-            <div class="group">
-                <h2>記録</h2>
-                <form id="log">
-                    <div>
-                        <label for="exercise-input">種目：</label>
-                        <select name="" id="exercise-input">
-                            <option value="レッグプレス">レッグプレス</option>
-                            <option value="ラットプルダウン">ラットプルダウン</option>
-                            <option value="チェストプレス">チェストプレス</option>
-                            <option value="クランチ">クランチ</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="weight-input">重量：</label>
-                        <input type="number" id="weight-input">
-                    </div>
-                    <div>
-                        <label for="reps-input">回数：</label>
-                        <input type="number" id="reps-input">
-                    </div>
-                    <div class="buttons">
-                        <div><button type="button" onclick="saveRecord()">保存</button></div>
-                        <div><button type="button" onclick="clearForm()">消去</button></div>
-                    </div>
-                </form>
-            </div>
+            <div class="tab-content-container">
+                <div id="tab1" class="tab-content active">
+                    <h2>記録</h2>
+                    <form id="log">
+                        <div class="m">
+                            <label for="exercise-input">種目：</label>
+                            <select name="" id="exercise-input">
+                                <option value="レッグプレス">レッグプレス</option>
+                                <option value="ラットプルダウン">ラットプルダウン</option>
+                                <option value="チェストプレス">チェストプレス</option>
+                                <option value="クランチ">クランチ</option>
+                            </select>
+                        </div>
+                        <div class="m">
+                            <label for="weight-input">重量：</label>
+                            <input type="number" id="weight-input">
+                        </div>
+                        <div class="m">
+                            <label for="reps-input">回数：</label>
+                            <input type="number" id="reps-input">
+                        </div>
+                        <div class="flex">
+                            <div><button type="button" onclick="saveRecord()">保存</button></div>
+                            <div><button type="button" onclick="clearForm()">消去</button></div>
+                        </div>
+                    </form>
+                </div>
 
 
-            <div id="records" class="group">
-                <h2>履歴</h2>
-                <span id="message"></span>
-                <table border="1" id="recordsTable">
-                    <thead>
-                        <tr>
-                            <th>日付</th>
-                            <th>種目</th>
-                            <th>重量</th>
-                            <th>回数</th>
-                        </tr>
-                    </thead>
-                    <tbody id="recordsTableBody">
-                    </tbody>
-                </table>
-            </div>
+                <div id="records" class="tab-content">
+                    <h2>履歴</h2>
+                    <span id="message"></span>
+                    <table border="1" id="recordsTable">
+                        <thead>
+                            <tr>
+                                <th>日付</th>
+                                <th>種目</th>
+                                <th>重量</th>
+                                <th>回数</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recordsTableBody">
+                        </tbody>
+                    </table>
+                </div>
 
 
-            <div class="group">
-                <h2>グラフ</h2>
-                <span id="message2"></span>
-                <canvas id="myChart"></canvas>
+                <div id="tab3" class="tab-content">
+                    <h2>グラフ</h2>
+                    <span id="message2"></span>
+                    <canvas id="myChart"></canvas>
+                </div>
             </div>
         </div>
 
         <script src="script.js"></script>
+        <script src="tab.js"></script>
 
     </body>
 

@@ -6,35 +6,78 @@ input {
     font-size: 16px;
 }
 
-.container {
-    max-width: 700px;
-    margin: 0 auto;
-}
 
 h1 {
     text-align: center;
 }
 
-.buttons {
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.m {
+    margin: 20px;
+}
+
+.flex {
     display: flex;
     justify-content: space-around;
 }
 
-.group {
+.tab-content-container {
+    background-color: antiquewhite;
+}
+
+/* タブのスタイル */
+.tab-header {
+    text-align: center;
+}
+
+.tab-list {
+    display: inline-block;
+}
+
+.tab-item {
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+}
+
+.tab-item:hover {
+    background-color: #ddd;
+}
+
+.tab-item.active {
+    background-color: #fff;
+    border-bottom: 2px solid #ddd;
+}
+
+/* タブのコンテンツのスタイル */
+.tab-content-container {
     padding: 20px;
-    margin: 10px;
-    border: 1px solid black;
+    margin: 20px;
+    border: 2px solid #ddd;
+    border-top: none;
+    border-right: none;
 }
 
-#log {
-    width: max-content;
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+
+/* 履歴テーブルのスタイル */
+
+table {
     margin: 0 auto;
 }
 
-#log div {
-    margin: 18px;
-}
-
-#records table {
-    margin: 0 auto;
+thead {
+    font-size: larger;
 }
