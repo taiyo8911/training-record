@@ -36,6 +36,7 @@ h1 {
 
 .tab-list {
     display: inline-block;
+    list-style-type: none;
 }
 
 .tab-item {
