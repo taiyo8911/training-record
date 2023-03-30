@@ -1,4 +1,4 @@
-// タブ表示
+// タブメニュー
 function openTab(evt, tabName) {
     // タブのコンテンツをすべて非表示にする
     var i, tabcontent, tablinks;
@@ -15,4 +15,13 @@ function openTab(evt, tabName) {
     document.getElementById(tabName).style.display = "block";
     // クリックされたタブをアクティブ状態にする
     evt.currentTarget.className += " active";
+}
+
+
+// タブメニューの各要素にmouseoverイベントを追加する
+var tablinks = document.getElementsByClassName("tab-item");
+for (var i = 0; i < tablinks.length; i++) {
+    tablinks[i].addEventListener("mouseover", function (event) {
+        openTab(event, this.dataset.tab);
+    });
 }
